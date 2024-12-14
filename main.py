@@ -80,7 +80,7 @@ with open('guitar.csv', 'w', newline='', encoding='utf-8') as file:
                             content_before_dual.append(content)
                         price = ''.join(str(c).strip() for c in content_before_dual if str(c).strip())
                             
-                    if n == 26:
+                    if n == 22:
                         flagProductObj.iD = n
                         flagProductObj.model = model
                         flagProductObj.name = name
