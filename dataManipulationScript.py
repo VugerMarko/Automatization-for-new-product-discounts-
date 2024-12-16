@@ -7,10 +7,10 @@ from email.mime.text import MIMEText
 smtp_server = "smtp.gmail.com"
 port = 465
 
-sender = "markovugerlol@gmail.com"
-password = "cpbl hpis jblc wkki"
+sender = "email"
+password = "google app password"
 
-recipient = "markovugerlol@gmail.com"
+recipient = "email"
 
 subject = {}
 
