@@ -15,7 +15,7 @@ recipient = "email"
 subject = {}
 
 subject = "".join(f"{attr_name}: {attr_value}\n" for attr_name, attr_value in flagProductObj.__dict__.items())
-
+print(subject)
 linkSet = []
 
 linkSet = flagProductObj.model.split()
@@ -33,14 +33,14 @@ linkSet = list(dict.fromkeys(linkSet))
 
 newLink = "-".join(linkPart.lower() for linkPart in linkSet)
 
-print(baseLink + newLink)
+link = baseLink + newLink
 
-if flagProductObj.discount != "N/A" and flagProductObj.status == "Na skladištu":
+if flagProductObj.status == "Na skladištu":
     try:
         server = smtplib.SMTP_SSL(smtp_server, port)
         server.login(sender, password)
         
-        message = MIMEText(subject)
+        message = MIMEText(subject + link)
         message["Subject"] = f"Your Flagged Product Is Here! {flagProductObj.name} {flagProductObj.model} is on discount!"
         message["From"] = sender
         message["To"] = recipient

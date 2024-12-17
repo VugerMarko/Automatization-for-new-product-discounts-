@@ -10,7 +10,7 @@ n = 0
 class flaggedProduct:
     flagged_instance = []
     
-    def __init__(self, iD = -1, name = "", model = "", price = "", status = "", old_price = "", discount = "", site_link = ""):
+    def __init__(self, iD = -1, name = "", model = "", price = "", status = "", old_price = "", discount = ""):
         self.iD = iD
         self.name = name
         self.model = model
@@ -18,7 +18,7 @@ class flaggedProduct:
         self.old_price = old_price
         self.discount = discount
         self.status = status
-        self.siteLink = site_link
+       
 
 
 flagged_model = ""
@@ -81,7 +81,7 @@ with open('guitar.csv', 'w', newline='', encoding='utf-8') as file:
                             content_before_dual.append(content)
                         price = ''.join(str(c).strip() for c in content_before_dual if str(c).strip())
                             
-                    if n == 21:
+                    if n == 17:
                         flagProductObj.iD = n
                         flagProductObj.model = model
                         flagProductObj.name = name
