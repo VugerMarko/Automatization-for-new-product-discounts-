@@ -14,6 +14,8 @@ recipient = "email"
 
 subject = {}
 
+#comment
+
 subject = "".join(f"{attr_name}: {attr_value}\n" for attr_name, attr_value in flagProductObj.__dict__.items())
 print(subject)
 linkSet = []
